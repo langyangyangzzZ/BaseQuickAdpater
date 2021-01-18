@@ -15,7 +15,7 @@ public class SectionBean extends SectionEntity<MediaStore.Video> {
 
     /**
      *
-     * @param isHeader    是否是多布局
+     * @param isHeader    是否是头布局
      * @param header    参数name
      */
     public SectionBean(boolean isHeader, String header) {

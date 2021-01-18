@@ -46,14 +46,11 @@ public class RemoveActivity extends AppCompatActivity {
         }
         recycler.setAdapter(adapter = new DragAdapter(R.layout.item_layout,list));
 
-        ItemDragAndSwipeCallback itemDragAndSwipeCallback = new ItemDragAndSwipeCallback(adapter);
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragAndSwipeCallback);
-        itemTouchHelper.attachToRecyclerView(recycler);
 
 
         //拖动
-        initDrag(itemTouchHelper);
+        initDrag(recycler);
 
         //删除
         initRemove();
@@ -89,15 +86,19 @@ public class RemoveActivity extends AppCompatActivity {
         };
         // 开启滑动删除
         adapter.enableSwipeItem();
+        //删除监听
         adapter.setOnItemSwipeListener(onItemSwipeListener);
     }
 
     /**
      * 拖动
-     * @param itemTouchHelper
      */
-    private void initDrag(ItemTouchHelper itemTouchHelper) {
+    private void initDrag(RecyclerView recycler) {
+        ItemDragAndSwipeCallback itemDragAndSwipeCallback = new ItemDragAndSwipeCallback(adapter);
 
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragAndSwipeCallback);
+
+        itemTouchHelper.attachToRecyclerView(recycler);
         //拖拽监听
         OnItemDragListener onItemDragListener = new OnItemDragListener() {
             @Override   //开始拖拽下标
@@ -106,7 +107,6 @@ public class RemoveActivity extends AppCompatActivity {
             }
             @Override//拖拽过程中 form 当前 to 拖拽到
             public void onItemDragMoving(RecyclerView.ViewHolder source, int from, RecyclerView.ViewHolder target, int to) {
-
                 Log.i("拖拽:onItemDragStart",from+"\t"+to);
             }
             @Override   //结束拖拽下标

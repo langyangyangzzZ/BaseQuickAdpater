@@ -17,28 +17,31 @@ import demo.ht.com.basequickadpater.beans.MultipleBean;
 
 public class MultipleItemQuickAdapter extends BaseMultiItemQuickAdapter<MultipleBean, BaseViewHolder> {
 
+    public static final int TEXT = 1;//布局一
+    public static final int IMG = 2;//布局二
+    public static final int TEXT_IMG = 3;//布局三
+
     public MultipleItemQuickAdapter(List data) {
         super(data);
-        addItemType(MultipleBean.TEXT, R.layout.mult_item1_layout);
-        addItemType(MultipleBean.IMG, R.layout.mult_item2_layout);
-        addItemType(MultipleBean.TEXT_IMG, R.layout.mult_item3_layout);
+        addItemType(TEXT, R.layout.mult_item1_layout);
+        addItemType(IMG, R.layout.mult_item2_layout);
+        addItemType(TEXT_IMG, R.layout.mult_item3_layout);
     }
 
     @Override
     protected void convert(BaseViewHolder helper, MultipleBean item) {
         switch (helper.getItemViewType()) {
-            case MultipleBean.TEXT:
+            case TEXT:
                 helper.setText(R.id.tv, "我是布局一 ");
                 break;
-            case MultipleBean.IMG:
+            case IMG:
                 helper.setImageResource(R.id.image, R.drawable.ic_launcher_background);
                 break;
-            case MultipleBean.TEXT_IMG:
+            case TEXT_IMG:
                 helper.setImageResource(R.id.image, R.drawable.ic_launcher_foreground);
                 helper.setText(R.id.tv, "我是布局三");
                 break;
 
         }
     }
-
 }

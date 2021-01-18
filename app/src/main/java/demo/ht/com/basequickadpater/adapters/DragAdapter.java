@@ -16,7 +16,6 @@ import demo.ht.com.basequickadpater.beans.DragBean;
  * 公众号:码上变有钱
  */
 public class DragAdapter extends BaseItemDraggableAdapter<DragBean, BaseViewHolder> {
-
     /**
      *
      * @param layoutResId item布局
