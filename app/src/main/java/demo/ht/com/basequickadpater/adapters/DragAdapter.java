@@ -27,6 +27,7 @@ public class DragAdapter extends BaseItemDraggableAdapter<DragBean, BaseViewHold
 
     @Override
     protected void convert(BaseViewHolder helper, DragBean item) {
+
         helper.setText(R.id.tv,item.getName());
     }
 }
