@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activitys.MainActivity">
 
     <Button
         android:id="@+id/bt1"
@@ -32,6 +32,19 @@
     <Button
         android:id="@+id/bt5"
         android:text="三级列表适配器"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt6"
+        android:text="百分比布局"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt7"
+        android:textAllCaps="false"
+        android:text="DataBinding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

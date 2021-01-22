@@ -1,9 +1,10 @@
-package demo.ht.com.basequickadpater;
+package demo.ht.com.basequickadpater.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import demo.ht.com.basequickadpater.R;
 import demo.ht.com.basequickadpater.adapters.ExpandableItemAdapter;
 import demo.ht.com.basequickadpater.beans.LeveBean1;
 import demo.ht.com.basequickadpater.beans.LeveBean2;

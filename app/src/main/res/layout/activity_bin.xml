@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<!--        DataBinding自动生成别名 -->
+    <data>
+
+        <import type="demo.ht.com.basequickadpater.beans.UserBean" />
+
+        <import type="java.util.ArrayList" />
+
+        <import type="java.util.HashMap" />
+
+        <import type="demo.ht.com.basequickadpater.activitys.BinActivity" />
+
+
+        <!--        Map 目前只支持基本引用类型     -->
+        <variable
+            name="hashMap"
+            type="HashMap&lt;String, String>" />
+
+        <!--        int     -->
+        <variable
+            name="listi"
+            type="int" />
+
+        <!--        数组 目前只支持基本引用类型     -->
+        <variable
+            name="users"
+            type="String[]" />
+
+        <!--        ArrayList     -->
+        <variable
+            name="userList"
+            type="ArrayList&lt;UserBean>" />
+
+        <!--        UserBean     -->
+        <variable
+            name="user"
+            type="UserBean" />
+
+        <!--        boolean     -->
+        <variable
+            name="isCheck"
+            type="boolean" />
+
+        <!--        点击事件     -->
+        <variable
+            name="OnClickListener"
+            type="BinActivity" />
+
+        <!--        获取当前时间     -->
+        <variable
+            name="date"
+            type="java.util.Date" />
+
+        <!--        Button点击事件  -->
+        <variable
+            name="onButtonClick"
+            type="BinActivity" />
+
+        <!--        Image图片     -->
+        <variable
+            name="imageUrl"
+            type="demo.ht.com.basequickadpater.beans.ImageBean" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2000dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:context=".activitys.BinActivity">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.name}" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(user.age)}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{userList[listi].name}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{hashMap[`name`]}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{users[0]}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{date}" />
+
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{OnClickListener.onClick}"
+                android:text='@{isCheck ? "error" : "ok"}' />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{OnClickListener.onClick}"
+                android:text="点击事件" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{OnClickListener.onButtonClick}"
+                android:text="进入Fragment页面"
+                android:textAllCaps="false" />
+
+            <FrameLayout
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
+
+            <ImageView
+                app:url="@{imageUrl.url}"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

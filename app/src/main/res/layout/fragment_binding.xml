@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="demo.ht.com.basequickadpater.beans.UserBean"/>
+
+        <variable
+            name="userBean"
+            type="UserBean" />
+
+        <variable
+            name="click"
+            type="demo.ht.com.basequickadpater.fragments.BindingFragment" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_200"
+        tools:context=".fragments.BindingFragment">
+
+        <TextView
+            android:onClick="@{click.onTextClick}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAllCaps="false"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:text="@{userBean.name}" />
+
+    </FrameLayout>
+</layout>

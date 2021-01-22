@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="demo.ht.com.basequickadpater">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BaseQuickAdpater">
-        <activity android:name=".ExpandActivity"></activity>
-        <activity android:name=".RemoveActivity" />
-        <activity android:name=".MultiActivity" />
-        <activity android:name=".SectionActivity" />
-        <activity android:name=".OrdinaryActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activitys.BinActivity"></activity>
+        <activity android:name=".activitys.PercentActivity" />
+        <activity android:name=".activitys.ExpandActivity" />
+        <activity android:name=".activitys.RemoveActivity" />
+        <activity android:name=".activitys.MultiActivity" />
+        <activity android:name=".activitys.SectionActivity" />
+        <activity android:name=".activitys.OrdinaryActivity" />
+        <activity android:name=".activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

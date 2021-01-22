@@ -1,10 +1,11 @@
-package demo.ht.com.basequickadpater;
+package demo.ht.com.basequickadpater.activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import demo.ht.com.basequickadpater.R;
 import demo.ht.com.basequickadpater.adapters.DragAdapter;
 import demo.ht.com.basequickadpater.beans.DragBean;
 

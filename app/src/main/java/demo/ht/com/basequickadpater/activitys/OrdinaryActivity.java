@@ -1,17 +1,21 @@
-package demo.ht.com.basequickadpater;
+package demo.ht.com.basequickadpater.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import demo.ht.com.basequickadpater.R;
 import demo.ht.com.basequickadpater.adapters.RecyclerViewAdapter;
 import demo.ht.com.basequickadpater.beans.ItemBean;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.animation.BaseAnimation;
 
 import java.util.ArrayList;
 
@@ -45,12 +49,11 @@ public class OrdinaryActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //初始化数据
+                initItem();
                 adapter.notifyDataSetChanged();
             }
         });
-        //初始化数据
-        initItem();
 
         recycler.setAdapter(adapter = new RecyclerViewAdapter(R.layout.item_layout, itemBeans));
 
@@ -59,19 +62,19 @@ public class OrdinaryActivity extends AppCompatActivity {
         adapter.setEmptyView(view);
 
         //条目动画 (默认动画与自定义动画)
-//        initAnimation();
+        initAnimation();
 
         //点击事件
-//        initOnClick();
+        initOnClick();
 
 //        头尾布局
-//        initHeadAndFootLayout();
+        initHeadAndFootLayout();
 
         //上拉加载更多
-//        initUpLoadMore();
+        initUpLoadMore();
 
-        //下拉加载更多
-//        initDownLoadMore();
+        //下拉刷新更多
+        initDownLoadMore();
 
 
         //预加载
@@ -115,10 +118,10 @@ public class OrdinaryActivity extends AppCompatActivity {
 //                        adapter.loadMoreComplete();
 
                         //加载失败
-                        adapter.loadMoreFail();
+//                        adapter.loadMoreFail();
 
                         //下拉加载完成不显示文字
-//                        adapter.setEnableLoadMore(false);
+                        adapter.setEnableLoadMore(false);
 
                     }
 
@@ -138,7 +141,6 @@ public class OrdinaryActivity extends AppCompatActivity {
         adapter.addHeaderView(headView);
         adapter.addFooterView(foodView);
 
-        adapter.setHeaderAndEmpty(true);
     }
 
     /**
@@ -146,7 +148,7 @@ public class OrdinaryActivity extends AppCompatActivity {
      */
     private void initAnimation() {
         //渐变动画
-        adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+//        adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         //从右到左动画
 //        adapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
         //从下到上动画
@@ -154,22 +156,21 @@ public class OrdinaryActivity extends AppCompatActivity {
         //从左到右动画
 //        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         //从右到左动画
-//        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
+        adapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
 
         //自定义动画
-       /*
        adapter.openLoadAnimation(new BaseAnimation() {
             @Override
             public Animator[] getAnimators(View view) {
                 return new Animator[]{
-                        *//**
+        /*
          * scaleX / scaleY 缩放动画
          *  alpha   透明度动画   取值 1-0
          *  rotationX /rotationY 旋转动画   取值 0-360
          *  translationX / translationY 移动动画
          *      translationX正数向右移动,负数向左移动
          *      translationY正数向下移动,负数向上移动
-         *//*
+         **/
 
                         //scaleX / scaleY 缩放动画
 //                        ObjectAnimator.ofFloat(view, "scaleX", 1, 2.5f, 1),
@@ -190,7 +191,6 @@ public class OrdinaryActivity extends AppCompatActivity {
                 };
             }
         });
-        */
 
         //动画是否重复播放 false重复播放 默认为true不重复模仿
         adapter.isFirstOnly(false);

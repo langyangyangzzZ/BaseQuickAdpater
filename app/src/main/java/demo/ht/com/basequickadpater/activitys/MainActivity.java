@@ -1,25 +1,13 @@
-package demo.ht.com.basequickadpater;
+package demo.ht.com.basequickadpater.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import demo.ht.com.basequickadpater.adapters.RecyclerViewAdapter;
-import demo.ht.com.basequickadpater.beans.ItemBean;
+import demo.ht.com.basequickadpater.R;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.animation.BaseAnimation;
-
-import java.util.ArrayList;
 /**
  * @ClassName ItemBean
  * 作者: szj
@@ -35,11 +23,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Button bt1 = findViewById(R.id.bt1);
         Button bt2 = findViewById(R.id.bt2);
         Button bt3 = findViewById(R.id.bt3);
         Button bt4 = findViewById(R.id.bt4);
         Button bt5 = findViewById(R.id.bt5);
+        Button bt6 = findViewById(R.id.bt6);
+        Button bt7 = findViewById(R.id.bt7);
 
         /*
          * 普通布局
@@ -88,6 +79,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ToActivity(ExpandActivity.class);
+            }
+        });
+
+        /**
+         * 百分比布局
+         */
+        bt6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(PercentActivity.class);
+            }
+        });
+
+        /**
+         * DataBinding
+         */
+        bt7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(BinActivity.class);
             }
         });
     }

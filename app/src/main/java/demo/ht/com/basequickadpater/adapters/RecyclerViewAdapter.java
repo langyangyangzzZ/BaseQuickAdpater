@@ -1,17 +1,11 @@
 package demo.ht.com.basequickadpater.adapters;
 
-import android.animation.Animator;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
 import androidx.annotation.Nullable;
-import demo.ht.com.basequickadpater.MainActivity;
 import demo.ht.com.basequickadpater.R;
 import demo.ht.com.basequickadpater.beans.ItemBean;
 
