@@ -33,6 +33,6 @@ public class LeveBean2 extends AbstractExpandableItem<LeveBean3> implements Mult
 
     @Override
     public int getLevel() {
-        return 1;
+        return 2;
     }
 }

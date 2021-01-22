@@ -35,34 +35,26 @@ public class MultiActivity extends AppCompatActivity {
 
         RecyclerView recycler = findViewById(R.id.recycler);
 
-
-        recycler.setLayoutManager(new GridLayoutManager(this, 3));
+        recycler.setLayoutManager(new LinearLayoutManager(this));
 
 //        //初始化数据
         ArrayList<MultipleBean> list = new ArrayList<>();
         for (int i = 0; i <50; i++) {
             if (i % 3 == 0) {
-                list.add( new MultipleBean(1));
+                //布局一
+                list.add( new MultipleBean(MultipleItemQuickAdapter.TEXT));
             }else if(i % 3 ==1){
-                list.add( new MultipleBean(2));
+                //布局二
+                list.add( new MultipleBean(MultipleItemQuickAdapter.IMG));
             }else{
-                list.add( new MultipleBean(3));
+                //布局三
+                list.add( new MultipleBean(MultipleItemQuickAdapter.TEXT_IMG));
             }
         }
 
         MultipleItemQuickAdapter adapter = new MultipleItemQuickAdapter(list);
 
         recycler.setAdapter(adapter);
-
-        //position 当前可见条目
-        adapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(GridLayoutManager gridLayoutManager, int position) {
-                Log.i("多布局适配器",position+"");
-                return list.get(position).getItemType();
-            }
-        });
-
 
     }
 }

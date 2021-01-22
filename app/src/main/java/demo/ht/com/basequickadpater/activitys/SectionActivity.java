@@ -35,8 +35,8 @@ public class SectionActivity extends AppCompatActivity {
 
         ArrayList<SectionBean> list = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            if (i %2 == 0) {
-                list.add(new SectionBean(true,"张三  "+i));
+            if (i   == 0) {
+                list.add(new SectionBean(true,"   头布局   "+i));
             }else{
                 list.add(new SectionBean(false,"老刘  "+i));
             }

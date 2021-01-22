@@ -22,13 +22,6 @@ public class ExpandableItemAdapter extends BaseMultiItemQuickAdapter<MultiItemEn
     public final static int GROUP = 1;
     //姓名
     public final static int NAME = 2;
-
-    /**
-     * Same as QuickAdapter#QuickAdapter(Context,int) but with
-     * some initialization data.
-     *
-     * @param data A new list is created out of this one to avoid mutable list
-     */
     public ExpandableItemAdapter(List<MultiItemEntity> data) {
         super(data);
         addItemType(GRADE, R.layout.item_layout);

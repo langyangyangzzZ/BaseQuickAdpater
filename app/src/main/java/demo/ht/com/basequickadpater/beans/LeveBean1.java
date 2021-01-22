@@ -23,7 +23,7 @@ public class LeveBean1 extends AbstractExpandableItem<LeveBean2> implements Mult
 
     @Override
     public int getLevel() {
-        return 0;
+        return 1;
     }
 
     public String getGrade() {

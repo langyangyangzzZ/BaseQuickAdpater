@@ -16,6 +16,7 @@ public class DateBean {
     //获取当前日期
     @BindingConversion
     public static String convertDate(Date date) {
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         return sdf.format(date);
     }
