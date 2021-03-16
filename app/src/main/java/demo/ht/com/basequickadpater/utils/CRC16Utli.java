@@ -42,6 +42,7 @@ package demo.ht.com.basequickadpater.utils;
  */
 public class CRC16Utli {
 
+
     /**
      * CRC16_CCITT：多项式x16+x12+x5+1（0x1021），初始值0x0000，低位在前，高位在后，结果与0x0000异或
      * 0x8408是0x1021按位颠倒后的结果。
