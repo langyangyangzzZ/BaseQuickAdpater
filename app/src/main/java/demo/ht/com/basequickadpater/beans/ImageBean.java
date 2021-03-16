@@ -36,7 +36,7 @@ public class ImageBean   extends BaseObservable {
         notifyPropertyChanged(BR.url);
     }
 
-    @BindingAdapter("bind:url")  //bind后的名字任意起，注方法一定要为静态，否则报错
+    @BindingAdapter("url")  //bind后的名字任意起，注方法一定要为静态，否则报错
     public static void getImage(ImageView view, String url){
         Glide.with(view.getContext())
          .load(url)

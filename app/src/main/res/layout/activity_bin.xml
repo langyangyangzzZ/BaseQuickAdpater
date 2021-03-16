@@ -142,6 +142,7 @@
 
             <ImageView
                 app:url="@{imageUrl.url}"
+                android:src="@mipmap/ic_launcher_round"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"/>
 

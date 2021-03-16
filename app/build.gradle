@@ -64,8 +64,12 @@ dependencies {
     //百分比布局
     implementation 'com.android.support:percent:25.4.0'
 
-    //类似于Toast插件
+
+    //内存泄露检测
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
 
 
+    //开机动画
+    implementation 'site.gemus:openingstartanimation:1.0.0'
 
 }
