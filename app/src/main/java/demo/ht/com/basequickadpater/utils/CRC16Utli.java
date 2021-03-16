@@ -35,6 +35,10 @@ package demo.ht.com.basequickadpater.utils;
  * 时间: 2021/3/16 11:49
  * CSDN:https://blog.csdn.net/weixin_44819566
  * 公众号:码上变有钱
+ *
+ * 进制转换: https://tool.lu/hexconvert/
+ * CRC百度百科: https://baike.baidu.com/item/循环冗余校验码?fromtitle=CRC校验&fromid=3439037
+ * CRC检测工具: http://www.ip33.com/crc.html
  */
 public class CRC16Utli {
 
